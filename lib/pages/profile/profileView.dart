@@ -22,6 +22,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:manoy_app/provider/rating/averageRating_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:manoy_app/pages/profile/viewReview.dart';
+import 'package:manoy_app/widgets/toggleStatus.dart';
 
 class ProfileView extends ConsumerWidget {
   final bool? fromShopCard;
@@ -40,7 +41,7 @@ class ProfileView extends ConsumerWidget {
     final category = ref.watch(categoryProvider);
     final profilePhoto = ref.watch(profilePhotoProvider);
     final coverPhoto = ref.watch(coverPhotoProvider);
-
+    bool isPasswordVisible = false;
     final name =
         serviceName ?? ''; // Default to an empty string if serviceName is null
     late bool servicePermission = false;
@@ -212,9 +213,10 @@ class ProfileView extends ConsumerWidget {
                               ),
                               const SizedBox(height: 10),
                               StyledTextField(
-                                  controller: passwordController,
-                                  hintText: 'Enter your password',
-                                  obscureText: true)
+                                controller: passwordController,
+                                hintText: 'Enter your password',
+                                obscureText: true,
+                              )
                             ],
                           ),
                         const SizedBox(
@@ -487,12 +489,13 @@ class ProfileView extends ConsumerWidget {
                           ),
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 const SizedBox(
                   height: 60,
                 ),
+
                 SizedBox(
                   width: 300,
                   child: Text(
@@ -572,8 +575,13 @@ class ProfileView extends ConsumerWidget {
                 const Divider(
                   height: 0,
                 ),
+
                 const SizedBox(
-                  height: 10,
+                  height: 25,
+                ),
+                ToggleStatusWidget(),
+                const SizedBox(
+                  width: 20,
                 ),
               ],
             ),

@@ -48,7 +48,7 @@ dependencies:
   image_picker: ^0.8.1
   uuid: ^3.0.7
   flutter_hooks: ^0.18.5+1
-  google_maps_flutter: ^2.4.0
+  google_maps_flutter: ^2.5.0
   geolocator: ^10.0.0
   geocoding: ^2.1.0
   url_launcher: ^6.1.12
@@ -59,6 +59,7 @@ dependencies:
   timeago: ^3.5.0
   table_calendar: ^3.0.9
   fluttertoast: ^8.2.2
+  location: ^5.0.3
 
 dev_dependencies:
   flutter_test:

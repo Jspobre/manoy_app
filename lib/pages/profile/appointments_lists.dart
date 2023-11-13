@@ -12,7 +12,7 @@ class AppointmentsListsPage extends StatefulWidget {
 
 class _AppointmentsListsPageState extends State<AppointmentsListsPage> {
   final String userId = FirebaseAuth.instance.currentUser!.uid;
-
+  // final String shopId = FirebaseAuth.instance.currentUser!.uid;
   String? _selectedReason;
 
   @override

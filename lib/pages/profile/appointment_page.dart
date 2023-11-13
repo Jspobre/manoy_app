@@ -21,6 +21,7 @@ class _AppointmentPageState extends State<AppointmentPage> {
   DateTime today = DateTime.now();
   TimeOfDay? startTime;
   TimeOfDay? endTime;
+  Map<String, dynamic>? businessHours;
 
   void onDaySelected(DateTime day, DateTime focusedDay) {
     setState(() {
