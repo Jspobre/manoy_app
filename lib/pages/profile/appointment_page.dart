@@ -110,10 +110,37 @@ class _AppointmentPageState extends State<AppointmentPage> {
         ),
         Image.asset(
           'lib/images/logo.png',
-          height: 200,
-          width: 200,
+          height: 120,
+          width: 120,
         ),
         SizedBox(height: 5),
+        Center(
+          child: SizedBox(
+            height: 70, // Adjust the height as needed
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Warning: ',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.red,
+                    ),
+                  ),
+                  TextSpan(
+                    text:
+                        'Please select a time and date that align\nwith the business hours of the shop. Otherwise, the appointment will be rejected',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
         Container(
           child: TableCalendar(
             focusedDay: today,
